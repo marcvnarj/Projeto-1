@@ -41,6 +41,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5gf7v"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_piies")
