@@ -1879,38 +1879,38 @@ tile_set = SubResource("TileSet_1fp7r")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="04" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="BlueBackground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
 motion_mirroring = Vector2(576, 300)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/04"]
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/BlueBackground"]
 position = Vector2(0, -50)
 scale = Vector2(1.62, 1.5)
 texture = ExtResource("3_t5ptc")
 centered = false
 
-[node name="03" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="BlueClouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(576, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/03"]
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/BlueClouds"]
 scale = Vector2(1, 0.92284)
 texture = ExtResource("4_bq33v")
 centered = false
 
-[node name="02" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="LineClouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(576, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/02"]
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/LineClouds"]
 texture = ExtResource("5_j2gmx")
 centered = false
 
-[node name="01" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(576, 0)
 
-[node name="texture" type="Sprite2D" parent="ParallaxBackground/01"]
+[node name="texture" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 scale = Vector2(1, 0.916667)
 texture = ExtResource("6_1yooq")
 centered = false
