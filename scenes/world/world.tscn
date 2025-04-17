@@ -1880,10 +1880,12 @@ tile_set = SubResource("TileSet_1fp7r")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="04" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(576, 0)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(576, 300)
 
 [node name="texture" type="Sprite2D" parent="ParallaxBackground/04"]
-scale = Vector2(1, 0.925926)
+position = Vector2(0, -50)
+scale = Vector2(1.62, 1.5)
 texture = ExtResource("3_t5ptc")
 centered = false
 
@@ -1914,8 +1916,6 @@ texture = ExtResource("6_1yooq")
 centered = false
 
 [node name="CameraDebug" type="Camera2D" parent="."]
-enabled = false
+position = Vector2(0, 150)
 limit_left = 0
-limit_top = 0
-limit_bottom = 0
 script = ExtResource("7_bq33v")
