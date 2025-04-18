@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cf1gr1v7jnqd8" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Walk_6.png" id="7_qm2rd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7eggy"]
-radius = 9.0
+radius = 8.0
 height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7cbn"]
@@ -302,15 +302,15 @@ z_index = 1
 script = ExtResource("1_7eggy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_7eggy")
 
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 limit_left = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+drag_left_margin = 0.05
+drag_right_margin = 0.05
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_piies")
