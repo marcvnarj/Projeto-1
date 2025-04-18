@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	manage_animation()
 	move_and_slide()
+	
 
 func manage_animation() -> void:
 	if not is_jumping and is_on_floor() and velocity.x != 0:
