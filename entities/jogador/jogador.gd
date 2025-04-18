@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED: float = 100.0
-const JUMP_VELOCITY: float = -400.0
+const JUMP_VELOCITY: float = -300.0
 
 var jumping: bool = false
 
@@ -31,3 +31,4 @@ func _physics_process(delta: float) -> void:
 		animation.play("idle")
 
 	move_and_slide()
+		
