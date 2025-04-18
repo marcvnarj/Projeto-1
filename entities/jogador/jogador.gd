@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED : float = 100.0
-const JUMP_VELOCITY : float = -400.0
+const SPEED: float = 100.0
+const JUMP_VELOCITY: float = -400.0
 
 var jumping: bool = false
 
-
-@onready var animation := $Anim as AnimatedSprite2D
+@onready var animation: AnimatedSprite2D = $Anim
 
 
 func _physics_process(delta: float) -> void:
@@ -21,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		jumping = false
 
-	var direction := Input.get_axis("mv_left", "mv_right")
+	var direction:= Input.get_axis("mv_left", "mv_right")
 	if direction:
 		velocity.x = direction * SPEED
 		animation.scale.x = direction
