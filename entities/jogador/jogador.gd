@@ -26,10 +26,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	anima()
+	manage_animation()
 	move_and_slide()
 
-func anima() -> void:
+func manage_animation() -> void:
 	if not is_jumping and is_on_floor() and velocity.x != 0:
 		animation.play("walk")
 		var normalized: Vector2 = velocity.normalized()
