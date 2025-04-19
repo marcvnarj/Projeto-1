@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-const SPEED: float = 30.0
+
+const SPEED: float = 40.0
+
+var direction: int = 1
 
 @onready var hurt_box: Area2D = $HurtBox
 @onready var texture: AnimatedSprite2D = $Texture
-var direction: int = 1
 
 
 func _ready() -> void:
@@ -26,8 +28,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hurt_box_area_entered(area: Area2D) -> void:
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	hurt_box.queue_free()
+	direction = 0
 	texture.play("death")
 	await texture.animation_finished
 	queue_free()
