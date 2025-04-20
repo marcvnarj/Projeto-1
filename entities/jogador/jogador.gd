@@ -4,7 +4,12 @@ extends CharacterBody2D
 const SPEED: float = 100.0
 const JUMP_VELOCITY: float = -350.0
 
-@onready var animation: AnimatedSprite2D = $Anim
+@export var jump_sfx: AudioStreamWAV = null
+@export var death_sfx: AudioStreamWAV = null
+@export var coin_sfx: AudioStreamWAV = null
+
+@onready var animation: AnimatedSprite2D = $Texture
+@onready var audio_stream_player: AudioStreamPlayer = $Audio
 
 
 func _physics_process(delta: float) -> void:
@@ -13,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		play_sound(jump_sfx)
 	
 	var direction:= Input.get_axis("mv_left", "mv_right")
 	if direction:
@@ -22,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	manage_animation()
 	move_and_slide()
-	
+
 
 func manage_animation() -> void:
 	var normalized: Vector2 = velocity.normalized()
@@ -36,6 +42,11 @@ func manage_animation() -> void:
 		animation.play("idle")
 	if normalized.x == 1 or normalized.x == -1:
 		animation.scale.x = normalized.x
+
+
+func play_sound(sound: AudioStreamWAV) -> void:
+	audio_stream_player.stream = sound
+	audio_stream_player.play()
 
 
 func _on_hit_box_area_entered(_area: Area2D) -> void:

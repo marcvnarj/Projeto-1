@@ -3,10 +3,13 @@ extends CharacterBody2D
 
 const SPEED: float = 40.0
 
+@export var death_sfx: AudioStreamWAV = null
+
 var direction: int = 1
 
 @onready var hurt_box: Area2D = $HurtBox
 @onready var texture: AnimatedSprite2D = $Texture
+@onready var audio_stream_player: AudioStreamPlayer = $Audio
 
 
 func _ready() -> void:
@@ -28,8 +31,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func play_sound(song: AudioStreamWAV) -> void:
+	audio_stream_player.stream = song
+	audio_stream_player.play()
+
+
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	hurt_box.queue_free()
+	play_sound(death_sfx)
 	direction = 0
 	texture.play("death")
 	await texture.animation_finished
