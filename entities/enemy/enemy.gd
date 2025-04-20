@@ -31,14 +31,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func play_song(song: AudioStreamWAV) -> void:
+func play_sound(song: AudioStreamWAV) -> void:
 	audio_stream_player.stream = song
 	audio_stream_player.play()
 
 
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	hurt_box.queue_free()
-	play_song(death_sfx)
+	play_sound(death_sfx)
 	direction = 0
 	texture.play("death")
 	await texture.animation_finished
