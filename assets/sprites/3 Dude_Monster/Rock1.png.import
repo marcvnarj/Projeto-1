@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafl7xno081nc"
-path="res://.godot/imported/Rock1.png-bf0cf9130840b5fd193686e382739213.ctex"
+path="res://.godot/imported/Rock1.png-98f5080cacb940b436c3269fc7dd07d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/3 Dude_Monster/Rock1.png"
-dest_files=["res://.godot/imported/Rock1.png-bf0cf9130840b5fd193686e382739213.ctex"]
+source_file="res://assets/sprites/3 Dude_Monster/Rock1.png"
+dest_files=["res://.godot/imported/Rock1.png-98f5080cacb940b436c3269fc7dd07d2.ctex"]
 
 [params]
 

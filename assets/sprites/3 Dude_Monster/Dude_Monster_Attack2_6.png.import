@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8qw8k43wvfmb"
-path="res://.godot/imported/Dude_Monster_Attack2_6.png-fae4a6fb3aae4fb6400f396dbe13b959.ctex"
+path="res://.godot/imported/Dude_Monster_Attack2_6.png-8c76a71707e6226c1e38efe1cdb0be70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/3 Dude_Monster/Dude_Monster_Attack2_6.png"
-dest_files=["res://.godot/imported/Dude_Monster_Attack2_6.png-fae4a6fb3aae4fb6400f396dbe13b959.ctex"]
+source_file="res://assets/sprites/3 Dude_Monster/Dude_Monster_Attack2_6.png"
+dest_files=["res://.godot/imported/Dude_Monster_Attack2_6.png-8c76a71707e6226c1e38efe1cdb0be70.ctex"]
 
 [params]
 

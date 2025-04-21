@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vgx4b5gjbnjv"
-path="res://.godot/imported/Walk_Run_Push_Dust_6.png-cd5cc73551416882698ad6def17139b6.ctex"
+path="res://.godot/imported/Walk_Run_Push_Dust_6.png-eb1015e8fe979bdc9891492c81e37b48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Walk_Run_Push_Dust_6.png"
-dest_files=["res://.godot/imported/Walk_Run_Push_Dust_6.png-cd5cc73551416882698ad6def17139b6.ctex"]
+source_file="res://assets/sprites/2 Owlet_Monster/Walk_Run_Push_Dust_6.png"
+dest_files=["res://.godot/imported/Walk_Run_Push_Dust_6.png-eb1015e8fe979bdc9891492c81e37b48.ctex"]
 
 [params]
 

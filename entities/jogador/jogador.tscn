@@ -1,15 +1,15 @@
 [gd_scene load_steps=47 format=3 uid="uid://cj0l3umrcca3a"]
 
 [ext_resource type="Script" uid="uid://i5dvyuignayf" path="res://entities/jogador/jogador.gd" id="1_7eggy"]
-[ext_resource type="Texture2D" uid="uid://b1jowitgktsfg" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/Pink_Monster_Idle_4.png" id="1_psopi"]
-[ext_resource type="Texture2D" uid="uid://dkwfk3omocw6d" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Death_8.png" id="2_c3175"]
-[ext_resource type="Texture2D" uid="uid://bcf63e2cv4jt3" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Hurt_4.png" id="3_3reie"]
+[ext_resource type="Texture2D" uid="uid://dkwfk3omocw6d" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Death_8.png" id="2_c3175"]
+[ext_resource type="Texture2D" uid="uid://bcf63e2cv4jt3" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Hurt_4.png" id="3_3reie"]
 [ext_resource type="AudioStream" uid="uid://du42qgbcs3dcu" path="res://assets/audio/sfx/player_death.wav" id="3_b3kl3"]
 [ext_resource type="AudioStream" uid="uid://bpsdcv4wo10mx" path="res://assets/audio/sfx/coin.wav" id="4_qm2rd"]
-[ext_resource type="Texture2D" uid="uid://colnmrkx7rg52" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Jump_8.png" id="5_4tnvw"]
-[ext_resource type="Texture2D" uid="uid://ddxgaxvprtwcr" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Run_6.png" id="6_b3kl3"]
-[ext_resource type="Texture2D" uid="uid://cf1gr1v7jnqd8" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Walk_6.png" id="7_qm2rd"]
+[ext_resource type="Texture2D" uid="uid://colnmrkx7rg52" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Jump_8.png" id="5_4tnvw"]
+[ext_resource type="Texture2D" uid="uid://ddxgaxvprtwcr" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Run_6.png" id="6_b3kl3"]
+[ext_resource type="Texture2D" uid="uid://cf1gr1v7jnqd8" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Walk_6.png" id="7_qm2rd"]
 [ext_resource type="AudioStream" uid="uid://cb44otbrdtsjp" path="res://assets/audio/sfx/jump_sfx.wav" id="8_3reie"]
+[ext_resource type="Texture2D" uid="uid://dtvg1j1st08bv" path="res://assets/sprites/1 Pink_Monster/Pink_Monster_Idle_4.png" id="8_b3kl3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7eggy"]
 radius = 7.0
@@ -67,20 +67,20 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_3reie")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl8jr"]
-atlas = ExtResource("1_psopi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm2rd"]
+atlas = ExtResource("8_b3kl3")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_srnpo"]
-atlas = ExtResource("1_psopi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8w4o"]
+atlas = ExtResource("8_b3kl3")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ne4qn"]
-atlas = ExtResource("1_psopi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_li8un"]
+atlas = ExtResource("8_b3kl3")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yepmr"]
-atlas = ExtResource("1_psopi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j6wo"]
+atlas = ExtResource("8_b3kl3")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3reie"]
@@ -201,16 +201,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cl8jr")
+"texture": SubResource("AtlasTexture_qm2rd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_srnpo")
+"texture": SubResource("AtlasTexture_w8w4o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ne4qn")
+"texture": SubResource("AtlasTexture_li8un")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yepmr")
+"texture": SubResource("AtlasTexture_7j6wo")
 }],
 "loop": true,
 "name": &"idle",
@@ -304,7 +304,7 @@ drag_right_margin = 0.05
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_piies")
 animation = &"idle"
-autoplay = "idle"
+frame_progress = 0.53735
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://bvp5grn1s3r45"]
 
-[ext_resource type="Texture2D" uid="uid://5hk5d0hmx404" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_3fvr7"]
+[ext_resource type="Texture2D" uid="uid://5hk5d0hmx404" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_3fvr7"]
 [ext_resource type="Script" uid="uid://ce81vpeifqmto" path="res://entities/enemy/enemy.gd" id="1_dt443"]
-[ext_resource type="Texture2D" uid="uid://b5x46d5qjrauh" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="2_dt443"]
-[ext_resource type="Texture2D" uid="uid://ceh0x3pyluvfp" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Walk_6.png" id="3_4wwj3"]
+[ext_resource type="Texture2D" uid="uid://b5x46d5qjrauh" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="2_dt443"]
+[ext_resource type="Texture2D" uid="uid://ceh0x3pyluvfp" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Walk_6.png" id="3_4wwj3"]
 [ext_resource type="AudioStream" uid="uid://bwwyxa505y6j1" path="res://assets/audio/sfx/enemy_death.wav" id="5_4wwj3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d50e0"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpptybu66lwr6"
-path="res://.godot/imported/Dude_Monster_Death_8.png-80e35e3aad9d43de590ef8ec64c05d6b.ctex"
+path="res://.godot/imported/Dude_Monster_Death_8.png-08dc89bdca6969e29b2bc5ee49902f8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/3 Dude_Monster/Dude_Monster_Death_8.png"
-dest_files=["res://.godot/imported/Dude_Monster_Death_8.png-80e35e3aad9d43de590ef8ec64c05d6b.ctex"]
+source_file="res://assets/sprites/3 Dude_Monster/Dude_Monster_Death_8.png"
+dest_files=["res://.godot/imported/Dude_Monster_Death_8.png-08dc89bdca6969e29b2bc5ee49902f8d.ctex"]
 
 [params]
 

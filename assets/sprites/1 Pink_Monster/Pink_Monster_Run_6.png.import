@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddxgaxvprtwcr"
-path="res://.godot/imported/Pink_Monster_Run_6.png-12e24007c12d0e66d9dd71a0c067112d.ctex"
+path="res://.godot/imported/Pink_Monster_Run_6.png-7f2d175aaa16e983a2b1f6388f258e0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/1 Pink_Monster/Pink_Monster_Run_6.png"
-dest_files=["res://.godot/imported/Pink_Monster_Run_6.png-12e24007c12d0e66d9dd71a0c067112d.ctex"]
+source_file="res://assets/sprites/1 Pink_Monster/Pink_Monster_Run_6.png"
+dest_files=["res://.godot/imported/Pink_Monster_Run_6.png-7f2d175aaa16e983a2b1f6388f258e0b.ctex"]
 
 [params]
 

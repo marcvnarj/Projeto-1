@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5hk5d0hmx404"
-path="res://.godot/imported/Owlet_Monster_Idle_4.png-8fbd5077486aed3939cddbdd6a4f8cad.ctex"
+path="res://.godot/imported/Owlet_Monster_Idle_4.png-662fb1579dd7f8f1543a00c6cf662117.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png"
-dest_files=["res://.godot/imported/Owlet_Monster_Idle_4.png-8fbd5077486aed3939cddbdd6a4f8cad.ctex"]
+source_file="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png"
+dest_files=["res://.godot/imported/Owlet_Monster_Idle_4.png-662fb1579dd7f8f1543a00c6cf662117.ctex"]
 
 [params]
 

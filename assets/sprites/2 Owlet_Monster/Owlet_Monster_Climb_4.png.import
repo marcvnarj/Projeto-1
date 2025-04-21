@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://51k875om404n"
-path="res://.godot/imported/Owlet_Monster_Climb_4.png-ceb8169e85ce6e119b7d17139e8243f8.ctex"
+path="res://.godot/imported/Owlet_Monster_Climb_4.png-d95e786d4978792bbc67fd9632e4144c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Climb_4.png"
-dest_files=["res://.godot/imported/Owlet_Monster_Climb_4.png-ceb8169e85ce6e119b7d17139e8243f8.ctex"]
+source_file="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Climb_4.png"
+dest_files=["res://.godot/imported/Owlet_Monster_Climb_4.png-d95e786d4978792bbc67fd9632e4144c.ctex"]
 
 [params]
 
