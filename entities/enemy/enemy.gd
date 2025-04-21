@@ -28,7 +28,14 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = direction * SPEED
 
+
+	animation()
 	move_and_slide()
+
+
+func animation () -> void:
+	if direction != 0:
+		texture.play("walk")
 
 
 func play_sound(song: AudioStreamWAV) -> void:
@@ -43,3 +50,8 @@ func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	texture.play("death")
 	await texture.animation_finished
 	queue_free()
+
+
+func _on_hit_box_area_entered(_area: Area2D) -> void:
+	direction = 0
+	texture.play("Idle")

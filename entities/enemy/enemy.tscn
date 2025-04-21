@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bvp5grn1s3r45"]
+[gd_scene load_steps=28 format=3 uid="uid://bvp5grn1s3r45"]
 
 [ext_resource type="Texture2D" uid="uid://5hk5d0hmx404" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_3fvr7"]
 [ext_resource type="Script" uid="uid://ce81vpeifqmto" path="res://entities/enemy/enemy.gd" id="1_dt443"]
@@ -149,13 +149,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1trp4")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt443"]
 size = Vector2(12.5, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wwj3"]
+size = Vector2(17, 23)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -170,9 +173,6 @@ shape = SubResource("CapsuleShape2D_d50e0")
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xowvs")
 animation = &"Idle"
-autoplay = "walk"
-frame = 1
-frame_progress = 0.247753
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 
@@ -184,7 +184,16 @@ collision_mask = 64
 position = Vector2(-1, -9)
 shape = SubResource("RectangleShape2D_dt443")
 
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1.5, 4.5)
+shape = SubResource("RectangleShape2D_4wwj3")
+
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4wwj3")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

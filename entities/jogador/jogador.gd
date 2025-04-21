@@ -10,6 +10,7 @@ const JUMP_VELOCITY: float = -350.0
 
 @onready var animation: AnimatedSprite2D = $Texture
 @onready var audio_stream_player: AudioStreamPlayer = $Audio
+@onready var hurt_box: Area2D = $HurtBox
 
 
 func _physics_process(delta: float) -> void:
@@ -52,3 +53,12 @@ func play_sound(sound: AudioStreamWAV) -> void:
 func _on_hit_box_area_entered(_area: Area2D) -> void:
 	velocity.y = JUMP_VELOCITY * 0.8
 	animation.play("jump")
+
+
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
+	hurt_box.queue_free()
+	play_sound(death_sfx)
+	velocity.x = 0
+	animation.play("death")
+	await animation.animation_finished
+	queue_free()
