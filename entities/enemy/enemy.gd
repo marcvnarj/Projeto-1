@@ -10,6 +10,7 @@ var direction: int = 1
 @onready var hurt_box: Area2D = $HurtBox
 @onready var texture: AnimatedSprite2D = $Texture
 @onready var audio_stream_player: AudioStreamPlayer = $Audio
+@onready var hit_box: Area2D = $HitBox
 
 
 func _ready() -> void:
@@ -28,7 +29,13 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.x = direction * SPEED
 
+	animation()
 	move_and_slide()
+
+
+func animation () -> void:
+	if direction != 0:
+		texture.play("walk")
 
 
 func play_sound(song: AudioStreamWAV) -> void:
@@ -38,8 +45,15 @@ func play_sound(song: AudioStreamWAV) -> void:
 
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	hurt_box.queue_free()
+	hit_box.queue_free()
+	Global.add_score(50)
 	play_sound(death_sfx)
 	direction = 0
 	texture.play("death")
 	await texture.animation_finished
 	queue_free()
+
+
+func _on_hit_box_area_entered(_area: Area2D) -> void:
+	direction = 0
+	texture.play("Idle")

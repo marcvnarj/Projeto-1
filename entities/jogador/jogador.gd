@@ -8,26 +8,30 @@ const JUMP_VELOCITY: float = -350.0
 @export var death_sfx: AudioStreamWAV = null
 @export var coin_sfx: AudioStreamWAV = null
 
+var alive: bool = true
+
 @onready var animation: AnimatedSprite2D = $Texture
 @onready var audio_stream_player: AudioStreamPlayer = $Audio
+@onready var hurt_box: Area2D = $HurtBox
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if alive:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 		
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		play_sound(jump_sfx)
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			play_sound(jump_sfx)
 	
-	var direction:= Input.get_axis("mv_left", "mv_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		var direction:= Input.get_axis("mv_left", "mv_right")
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	manage_animation()
-	move_and_slide()
+		manage_animation()
+		move_and_slide()
 
 
 func manage_animation() -> void:
@@ -52,3 +56,14 @@ func play_sound(sound: AudioStreamWAV) -> void:
 func _on_hit_box_area_entered(_area: Area2D) -> void:
 	velocity.y = JUMP_VELOCITY * 0.8
 	animation.play("jump")
+
+
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
+	alive = false
+	Events.game_ended.emit(alive)
+	hurt_box.queue_free()
+	velocity.x = 0
+	play_sound(death_sfx)
+	animation.play("death")
+	await animation.animation_finished
+	queue_free()

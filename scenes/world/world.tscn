@@ -1,15 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://csa0irptjfnv8"]
+[gd_scene load_steps=19 format=4 uid="uid://csa0irptjfnv8"]
 
-[ext_resource type="Texture2D" uid="uid://bg5kd3fvkqjnh" path="res://assets/tilesmap/SNES - Super Mario World - Yoshis Island 4 Sub Area.png" id="1_dphjl"]
-[ext_resource type="Texture2D" uid="uid://cy2gcai411fwb" path="res://assets/tilesmap/SNES - Super Mario World - Yoshis Island 1.png" id="2_sl2e5"]
-[ext_resource type="Texture2D" uid="uid://btosss7b1d3ht" path="res://assets/Clouds 1/1.png" id="3_t5ptc"]
-[ext_resource type="Texture2D" uid="uid://csebpbc4nlp1f" path="res://assets/Clouds 1/2.png" id="4_bq33v"]
-[ext_resource type="Texture2D" uid="uid://dvd6tuu0qs8np" path="res://assets/Clouds 1/3.png" id="5_j2gmx"]
-[ext_resource type="Texture2D" uid="uid://bqm77g8wfanrn" path="res://assets/Clouds 1/4.png" id="6_1yooq"]
+[ext_resource type="Texture2D" uid="uid://bg5kd3fvkqjnh" path="res://assets/tilemap/SNES - Super Mario World - Yoshis Island 4 Sub Area.png" id="1_dphjl"]
+[ext_resource type="Texture2D" uid="uid://cy2gcai411fwb" path="res://assets/tilemap/SNES - Super Mario World - Yoshis Island 1.png" id="2_sl2e5"]
+[ext_resource type="Texture2D" uid="uid://btosss7b1d3ht" path="res://assets/backgrounds/1.png" id="3_t5ptc"]
+[ext_resource type="Texture2D" uid="uid://csebpbc4nlp1f" path="res://assets/backgrounds/2.png" id="4_bq33v"]
+[ext_resource type="Texture2D" uid="uid://dvd6tuu0qs8np" path="res://assets/backgrounds/3.png" id="5_j2gmx"]
+[ext_resource type="Texture2D" uid="uid://bqm77g8wfanrn" path="res://assets/backgrounds/4.png" id="6_1yooq"]
 [ext_resource type="PackedScene" uid="uid://cj0l3umrcca3a" path="res://entities/jogador/jogador.tscn" id="8_j2gmx"]
 [ext_resource type="PackedScene" uid="uid://bvp5grn1s3r45" path="res://entities/enemy/enemy.tscn" id="9_1yooq"]
 [ext_resource type="AudioStream" uid="uid://bwwyxa505y6j1" path="res://assets/audio/sfx/enemy_death.wav" id="9_5qq27"]
 [ext_resource type="AudioStream" uid="uid://b1ogxyry5e6tm" path="res://assets/audio/soundtrack/level_1.mp3" id="9_gb53w"]
+[ext_resource type="PackedScene" uid="uid://dwjhbqcth0sng" path="res://entities/coin/coin.tscn" id="11_5qq27"]
+[ext_resource type="PackedScene" uid="uid://xk5a7vnbji5f" path="res://scenes/UI/score_ui.tscn" id="12_dlabj"]
+[ext_resource type="Script" uid="uid://nvimmfmtc1h5" path="res://scenes/world/timer.gd" id="13_srmg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl2e5"]
 texture = ExtResource("1_dphjl")
@@ -2016,3 +2019,30 @@ death_sfx = ExtResource("9_5qq27")
 stream = ExtResource("9_gb53w")
 volume_db = -10.306
 autoplay = true
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin1" parent="Coins" instance=ExtResource("11_5qq27")]
+position = Vector2(3070, 146)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("11_5qq27")]
+position = Vector2(2366, 29)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("11_5qq27")]
+position = Vector2(1503, 73)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("11_5qq27")]
+position = Vector2(503, 80)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("11_5qq27")]
+position = Vector2(143, 128)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("12_dlabj")]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource("13_srmg5")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bvp5grn1s3r45"]
+[gd_scene load_steps=28 format=3 uid="uid://bvp5grn1s3r45"]
 
-[ext_resource type="Texture2D" uid="uid://5hk5d0hmx404" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_3fvr7"]
+[ext_resource type="Texture2D" uid="uid://5hk5d0hmx404" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_3fvr7"]
 [ext_resource type="Script" uid="uid://ce81vpeifqmto" path="res://entities/enemy/enemy.gd" id="1_dt443"]
-[ext_resource type="Texture2D" uid="uid://b5x46d5qjrauh" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="2_dt443"]
-[ext_resource type="Texture2D" uid="uid://ceh0x3pyluvfp" path="res://assets/craftpix-net-622999-free-pixel-art-tiny-hero-sprites/2 Owlet_Monster/Owlet_Monster_Walk_6.png" id="3_4wwj3"]
+[ext_resource type="Texture2D" uid="uid://b5x46d5qjrauh" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="2_dt443"]
+[ext_resource type="Texture2D" uid="uid://ceh0x3pyluvfp" path="res://assets/sprites/2 Owlet_Monster/Owlet_Monster_Walk_6.png" id="3_4wwj3"]
 [ext_resource type="AudioStream" uid="uid://bwwyxa505y6j1" path="res://assets/audio/sfx/enemy_death.wav" id="5_4wwj3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d50e0"]
@@ -149,13 +149,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1trp4")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt443"]
-size = Vector2(12.5, 4)
+size = Vector2(17, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wwj3"]
+size = Vector2(17, 23)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -170,9 +173,6 @@ shape = SubResource("CapsuleShape2D_d50e0")
 [node name="Texture" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xowvs")
 animation = &"Idle"
-autoplay = "walk"
-frame = 1
-frame_progress = 0.247753
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 
@@ -181,10 +181,19 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-1, -9)
+position = Vector2(-1.5, -9)
 shape = SubResource("RectangleShape2D_dt443")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1.5, 4.5)
+shape = SubResource("RectangleShape2D_4wwj3")
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_4wwj3")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
