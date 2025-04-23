@@ -46,6 +46,7 @@ func play_sound(song: AudioStreamWAV) -> void:
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	hurt_box.queue_free()
 	hit_box.queue_free()
+	Global.add_score(50)
 	play_sound(death_sfx)
 	direction = 0
 	texture.play("death")

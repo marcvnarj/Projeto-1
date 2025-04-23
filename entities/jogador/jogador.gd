@@ -60,6 +60,7 @@ func _on_hit_box_area_entered(_area: Area2D) -> void:
 
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	alive = false
+	Events.game_ended.emit(alive)
 	hurt_box.queue_free()
 	velocity.x = 0
 	play_sound(death_sfx)

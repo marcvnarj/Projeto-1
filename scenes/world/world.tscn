@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://csa0irptjfnv8"]
+[gd_scene load_steps=19 format=4 uid="uid://csa0irptjfnv8"]
 
 [ext_resource type="Texture2D" uid="uid://bg5kd3fvkqjnh" path="res://assets/tilemap/SNES - Super Mario World - Yoshis Island 4 Sub Area.png" id="1_dphjl"]
 [ext_resource type="Texture2D" uid="uid://cy2gcai411fwb" path="res://assets/tilemap/SNES - Super Mario World - Yoshis Island 1.png" id="2_sl2e5"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://bwwyxa505y6j1" path="res://assets/audio/sfx/enemy_death.wav" id="9_5qq27"]
 [ext_resource type="AudioStream" uid="uid://b1ogxyry5e6tm" path="res://assets/audio/soundtrack/level_1.mp3" id="9_gb53w"]
 [ext_resource type="PackedScene" uid="uid://dwjhbqcth0sng" path="res://entities/coin/coin.tscn" id="11_5qq27"]
+[ext_resource type="PackedScene" uid="uid://xk5a7vnbji5f" path="res://scenes/UI/score_ui.tscn" id="12_dlabj"]
+[ext_resource type="Script" uid="uid://nvimmfmtc1h5" path="res://scenes/world/timer.gd" id="13_srmg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl2e5"]
 texture = ExtResource("1_dphjl")
@@ -2034,3 +2036,13 @@ position = Vector2(503, 80)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("11_5qq27")]
 position = Vector2(143, 128)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("12_dlabj")]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource("13_srmg5")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
