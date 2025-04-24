@@ -61,6 +61,7 @@ jump={
 2d_physics/layer_10="EnemyHitBox"
 2d_physics/layer_11="PlayerHurtBox"
 2d_physics/layer_12="FinishLine"
+2d_physics/layer_13="Void"
 
 [rendering]
 

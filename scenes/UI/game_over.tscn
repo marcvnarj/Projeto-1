@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cj0yesbmdwyg2" path="res://scenes/UI/quit_game.gd" id="2_88uj8"]
 
 [node name="DiedMenu" type="Control"]
+z_index = 999
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +14,15 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 script = ExtResource("1_88uj8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.336608, 0.336608, 0.336608, 1)
 
 [node name="Button" type="MarginContainer" parent="."]
 layout_mode = 1
