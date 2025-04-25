@@ -299,6 +299,7 @@ shape = SubResource("CapsuleShape2D_7eggy")
 
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
+limit_bottom = 290
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_left_margin = 0.05

@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var background_audio: AudioStreamPlayer = $BackgroundAudio
-@onready var game_over: Control = $GameOver
+@onready var game_over: Control = %GameOver
 
 
 func _ready() -> void:

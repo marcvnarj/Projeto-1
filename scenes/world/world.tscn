@@ -2126,6 +2126,10 @@ position = Vector2(5367, -14)
 
 [node name="ScoreUI" parent="CanvasLayer" instance=ExtResource("12_dlabj")]
 
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("16_71ii3")]
+unique_name_in_owner = true
+visible = false
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 script = ExtResource("13_srmg5")
@@ -2136,9 +2140,6 @@ script = ExtResource("16_m114p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLine"]
 position = Vector2(5792.75, 155)
 shape = SubResource("RectangleShape2D_mxkvs")
-
-[node name="GameOver" parent="." instance=ExtResource("16_71ii3")]
-visible = false
 
 [connection signal="area_entered" from="Void" to="." method="_on_void_area_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
