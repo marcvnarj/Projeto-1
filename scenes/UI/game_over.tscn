@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbaxtsmwb1eco"]
+
+[ext_resource type="Script" uid="uid://dkessiklixfti" path="res://scenes/UI/died_menu.gd" id="1_88uj8"]
+[ext_resource type="Script" uid="uid://dh8ftjvcach3e" path="res://scenes/UI/play_again.gd" id="1_mrw6b"]
+[ext_resource type="Script" uid="uid://cj0yesbmdwyg2" path="res://scenes/UI/quit_game.gd" id="2_88uj8"]
+
+[node name="DiedMenu" type="Control"]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_88uj8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.336608, 0.336608, 0.336608, 1)
+
+[node name="Button" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelTitle" type="Label" parent="Button/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="LabelScore" type="Label" parent="Button/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SCORE: 0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Button/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="PlayAgain" type="Button" parent="Button/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY AGAIN"
+script = ExtResource("1_mrw6b")
+
+[node name="QuitGame" type="Button" parent="Button/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT GAME"
+script = ExtResource("2_88uj8")
+
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/PlayAgain" to="Button/HBoxContainer/VBoxContainer/PlayAgain" method="_on_pressed"]
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/QuitGame" to="Button/HBoxContainer/VBoxContainer/QuitGame" method="_on_pressed"]

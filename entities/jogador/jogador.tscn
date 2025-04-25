@@ -299,6 +299,7 @@ shape = SubResource("CapsuleShape2D_7eggy")
 
 [node name="Camera" type="Camera2D" parent="."]
 limit_left = 0
+limit_bottom = 290
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_left_margin = 0.05
@@ -321,7 +322,7 @@ shape = SubResource("RectangleShape2D_c3175")
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 1024
-collision_mask = 512
+collision_mask = 4608
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-0.5, 2)
