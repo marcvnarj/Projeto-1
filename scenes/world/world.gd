@@ -13,5 +13,6 @@ func game_ended(_won: bool) -> void:
 	background_audio.stop()
 	game_over.show()
 
+
 func _on_void_area_entered(_area: Area2D) -> void:
 	pass 
